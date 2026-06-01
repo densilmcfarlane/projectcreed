@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from './supabase'
+import { supabase, supabaseReady } from './supabase'
 import { PHASES, FULL_GYM_WORKOUTS, HOTEL_WORKOUTS, JUMP_PROTOCOL, NUTRITION_PHASES, SUPPLEMENTS } from './data'
 
 const C = {
@@ -265,6 +265,13 @@ export default function App() {
       {toast && (
         <div style={{ position: 'fixed', top: 20, left: '50%', transform: 'translateX(-50%)', background: toast.color, color: '#fff', padding: '10px 20px', borderRadius: 8, zIndex: 200, fontSize: 11, letterSpacing: 2, fontWeight: 700, ...S.ibm, whiteSpace: 'nowrap' }}>
           {toast.msg}
+        </div>
+      )}
+
+      {/* SUPABASE NOT CONNECTED BANNER */}
+      {!supabaseReady && (
+        <div style={{ background: C.orange + '22', borderBottom: `1px solid ${C.orange}55`, padding: '10px 16px', textAlign: 'center', fontSize: 10, color: C.orange, letterSpacing: 1, ...S.ibm }}>
+          ⚠ Backend not connected — add VITE_SUPABASE_ANON_KEY in Vercel to save your data across devices. The app still works for now.
         </div>
       )}
 
