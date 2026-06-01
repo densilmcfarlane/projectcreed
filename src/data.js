@@ -124,8 +124,9 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 7–8. On a deficit — never grind to failure.',
       warmup: 'upper_push',
       exercises: [
-        { n: 'Barbell Bench Press', s: '4×8', note: 'Primary chest stimulus. 2-sec descent, 1-sec pause, explosive up. Hit 8 both sets → add 5 lb next week. RPE 8.' },
-        { n: 'Incline DB Press', s: '3×10', note: 'Upper chest — the Creed fullness. 45° incline. Elbows at 45° to torso. Full range. RPE 7.' },
+        { n: 'DB Bench Press (your primary)', s: '4×8', note: 'START AT 70 lb DBs. No spotter needed — just drop them if you fail. This is your safe heavy press. Hit 8 on all sets → go to 75s. RPE 8.' },
+        { n: 'Barbell Bench (rack + pins ONLY)', s: '3×8', note: 'Set safety pins at chest height so you CANNOT get pinned. Fear gone = real weight. START AT 150 lb. Hit 8 on all → add 5 lb. RPE 8.' },
+        { n: 'Incline DB Press', s: '3×10', note: 'Upper chest — the Creed fullness. START AT 50 lb DBs. 45° incline. Elbows at 45° to torso. Full range. RPE 7.' },
         { n: 'Weighted Dip', s: '3×10', note: 'Lean forward 30°. Chest emphasis. Lower until elbows at 90°. Explosive up. RPE 8.' },
         { n: 'Cable Fly (low to high)', s: '3×12', note: 'Lower chest sweep. Arms slightly bent. Squeeze hard at top for 1 sec. Feel the stretch at bottom. RPE 7.' },
         { n: 'Overhead Press (Strict)', s: '4×8', note: 'Shoulder cap width. No leg drive. Bar in front. Lock out at top. 2-sec descent. RPE 8.' },
@@ -143,7 +144,7 @@ export const FULL_GYM_WORKOUTS = {
       warmup: 'lower_power',
       exercises: [
         { n: '⚡ JUMP PROTOCOL FIRST', s: '10 min', note: 'Non-negotiable before any loading. Hip flexors → ankles → squat hold → 10 approach jumps → 5 max verticals. Track your highest reach weekly.' },
-        { n: 'Back Squat', s: '4×8', note: 'Hip crease below knee. Brace hard. 3-sec descent. Explosive up. 225–245 lb working range this phase. RPE 8.' },
+        { n: 'Back Squat', s: '4×8', note: 'Hip crease below knee. Brace hard. 3-sec descent. Explosive up. START AT 255 lb — your legs are ahead of everything else. Hit 8 on all sets → add 10 lb. RPE 8.' },
         { n: 'Romanian Deadlift', s: '4×10', note: 'Hip hinge. Soft knee. Bar drags down the leg. Feel the hamstring load at bottom. 3-sec eccentric. RPE 7.' },
         { n: 'Leg Press', s: '3×12', note: 'High and wide foot placement = glutes and hamstrings. Full range — don\'t short rep this. 90s rest.' },
         { n: 'Nordic Hamstring Curl', s: '3×6', note: 'Lower as slowly as possible. Partner holds feet or feet under pad. Prevents hamstring tears. Builds vertical jump directly.' },
@@ -159,7 +160,7 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8 on pull-ups and rows. RPE 7 on chest secondary.',
       warmup: 'upper_pull',
       exercises: [
-        { n: 'Weighted Pull-Up', s: '5×6', note: 'The single most important exercise for the Creed back. Dead hang start. Full extension. Chest to bar. Add 5–10 lb weekly. RPE 8.' },
+        { n: 'Weighted Pull-Up', s: '5×6', note: 'You do 15 bodyweight — time to load it. START AT +15 lb (dip belt or DB between feet). Dead hang, chest to bar. Hit 6 on all sets → add 5 lb. This turns 15 reps into a thick wide back. RPE 8.' },
         { n: 'Barbell Row', s: '4×8', note: 'Pull to lower chest. Elbows close to body. 2-sec hold at top. Control the negative. Back thickness is built here. RPE 8.' },
         { n: 'Cable Row (wide grip)', s: '3×10', note: 'Different angle from barbell row. Full stretch — let shoulders protract. Pull to upper chest. Lat width.' },
         { n: 'Lat Pulldown (wide grip)', s: '3×12', note: 'Full stretch at top. Pull elbows to hips. Lean back 15° only. Back width.' },
@@ -505,7 +506,7 @@ export const JUMP_PROTOCOL = [
   { step: '2', name: 'Ankle Dorsiflexion', duration: '60s each side', cue: 'Knee forward over toe against wall. More ankle range = deeper crouch = more power off the floor. Non-negotiable.' },
   { step: '3', name: 'Deep Squat Hold', duration: '60s', cue: 'Feet flat. Elbows on knees. Opens hips and grooves the jump crouch pattern. Breathe.' },
   { step: '4', name: 'Approach Jumps', duration: '10 reps', cue: '2-step approach. The penultimate step is your brake — it converts horizontal speed into vertical force. Drive the knee explosively at take-off.' },
-  { step: '5', name: 'Max Vertical Attempts', duration: '5 reps', cue: 'Full effort. Touch a wall mark, door frame, or rim. Write down your highest reach every week. Progress is happening even when it feels slow.' },
+  { step: '5', name: 'Max Vertical Attempts', duration: '5 reps', cue: 'YOU ARE 4–6 INCHES FROM A TWO-HAND DUNK. You already grab the rim comfortably. Full effort every rep. Touch the rim, then aim to get your wrists over it. This is close — likely this summer as you lean out, not September.' },
 ]
 
 // ─── NUTRITION BY PHASE ───────────────────────────────────────

@@ -12,17 +12,6 @@ const S = {
   ibm: { fontFamily: "'IBM Plex Sans', sans-serif" },
 }
 
-const C = {
-  bg: '#060608', card: '#0e0e14', card2: '#121218', border: '#1a1a26',
-  red: '#E8192C', gold: '#D4A017', blue: '#1E90FF', green: '#00C853',
-  orange: '#FF6B00', purple: '#9B5DE5', text: '#f0ece4', muted: '#777', dim: '#333',
-}
-
-const S = {
-  bebas: { fontFamily: "'Bebas Neue', sans-serif" },
-  ibm: { fontFamily: "'IBM Plex Sans', sans-serif" },
-}
-
 export default function App() {
   const [tab, setTab] = useState('today')
   const [currentPhase, setCurrentPhase] = useState('home-june')
