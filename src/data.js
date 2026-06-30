@@ -60,27 +60,28 @@ export const WARMUPS = {
 
 // ─── CORE FINISHERS (appended to every session) ──────────────
 const CORE_PUSH = [
-  { n: '— CORE FINISHER —', s: '', note: 'Do not skip. Abs respond to frequency. This is 5× per week.' },
+  { n: '— CORE FIRST (earn the session) —', s: '', note: 'Do not skip. Abs respond to frequency. This is 5× per week.' },
   { n: 'Ab Wheel Rollout', s: '4×10', note: 'Slow out. Pause. Controlled return. No hips sagging. RPE 8.' },
   { n: 'Hanging Leg Raise', s: '4×12', note: 'Dead hang. Legs straight. Posterior pelvic tilt at top. No swing.' },
   { n: 'Pallof Press', s: '3×12/side', note: 'Anti-rotation. Stand sideways to cable. Press out, hold 2 sec. Best functional core move.' },
   { n: 'Hollow Body Hold', s: '3×30s', note: 'Build to 45s. Lower back FLAT. If you feel your back arch — stop and reset.' },
 ]
 const CORE_PULL = [
-  { n: '— CORE FINISHER —', s: '', note: 'Every session. No exceptions.' },
+  { n: '— CORE FIRST (earn the session) —', s: '', note: 'Every session. No exceptions. Controlled, quality reps.' },
+  { n: 'Pallof Press', s: '3×12/side', note: 'Anti-rotation. Stand sideways to cable. Press out, hold 2 sec. The functional core staple.' },
   { n: 'Dead Bug', s: '4×8/side', note: 'Slow. Lower back pinned. Opposite arm + leg. Feel the deep core.' },
   { n: 'Copenhagen Plank', s: '3×20s/side', note: 'Top leg on bench. Adductor + oblique. Direct basketball carryover.' },
   { n: 'Cable Woodchop (high to low)', s: '3×12/side', note: 'Rotational power. Transfers directly to court and explosiveness.' },
   { n: 'Suitcase Carry', s: '3×30m/side', note: 'Heavy DB. Walk tall. Anti-lateral flexion. Deep core stability.' },
 ]
 const CORE_LOWER = [
-  { n: '— CORE FINISHER —', s: '', note: 'Lower body core = spine protection under heavy load.' },
-  { n: 'Hollow Body Hold', s: '3×30s', note: 'Build to 45s. The foundation of everything.' },
-  { n: 'Dead Bug', s: '3×8/side', note: 'Back pinned. Slow and deliberate.' },
-  { n: 'Copenhagen Plank', s: '3×20s/side', note: 'Adductor strength. Groin protection for basketball.' },
+  { n: '— CORE FIRST (light — protect your brace) —', s: '', note: 'Heavy squats/deadlifts after this. Keep it ACTIVATION level, not a burnout, so your trunk can brace safely.' },
+  { n: 'Pallof Press', s: '2×12/side', note: 'Anti-rotation. Light. Primes the core to brace under the bar.' },
+  { n: 'Hollow Body Hold', s: '2×20s', note: 'Activation only. Lower back FLAT.' },
+  { n: 'Dead Bug', s: '2×8/side', note: 'Back pinned. Slow. Wakes up the deep core without fatiguing it.' },
 ]
 const CORE_ATHLETIC = [
-  { n: '— CORE FINISHER —', s: '', note: 'Athletic core = rotational power and lateral stability.' },
+  { n: '— CORE FIRST (earn the session) —', s: '', note: 'Athletic core = rotational power and lateral stability.' },
   { n: 'Pallof Press', s: '3×12/side', note: 'Anti-rotation. The basketball core move.' },
   { n: 'Side Plank + Hip Dip', s: '3×15/side', note: 'Obliques. Lateral stability for defence and cuts.' },
   { n: 'Cable Woodchop', s: '3×12/side', note: 'Rotational power. First step explosion starts here.' },
@@ -124,6 +125,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 7–8. On a deficit — never grind to failure.',
       warmup: 'upper_push',
       exercises: [
+        ...CORE_PUSH,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'DB Bench Press (your primary)', s: '4×8', note: 'START AT 70 lb DBs. No spotter needed — just drop them if you fail. This is your safe heavy press. Hit 8 on all sets → go to 75s. RPE 8.' },
         { n: 'Barbell Bench (rack + pins ONLY)', s: '3×8', note: 'Set safety pins at chest height so you CANNOT get pinned. Fear gone = real weight. START AT 150 lb. Hit 8 on all → add 5 lb. RPE 8.' },
         { n: 'Incline DB Press', s: '3×10', note: 'Upper chest — the Creed fullness. START AT 50 lb DBs. 45° incline. Elbows at 45° to torso. Full range. RPE 7.' },
@@ -132,9 +135,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Overhead Press (Strict)', s: '4×8', note: 'Shoulder cap width. No leg drive. Bar in front. Lock out at top. 2-sec descent. RPE 8.' },
         { n: 'DB Lateral Raise', s: '4×15', note: 'The most underrated exercise for the Creed look. 2-sec up / 3-sec down. Stop at shoulder height. No swinging. RPE 7.' },
         { n: 'Face Pull', s: '3×20', note: 'Rope to forehead. External rotation at end range. Shoulder health. Never skip.' },
-        { n: 'Tricep Rope Pushdown superset Overhead Extension', s: '3×12 each', note: 'Minimal rest between pairs. Tricep mass = bigger arms at shirt-off.' },
-        ...CORE_PUSH,
-      ]
+        { n: 'Tricep Rope Pushdown superset Overhead Extension', s: '3×12 each', note: 'Minimal rest between pairs. Tricep mass = bigger arms at shirt-off.' },]
     },
     {
       id: 'cut-d2', day: 'DAY 2', name: 'LOWER A — POWER + VERTICAL',
@@ -143,15 +144,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8 on compounds. Explosive work is max effort always.',
       warmup: 'lower_power',
       exercises: [
+        ...CORE_LOWER,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: '⚡ JUMP PROTOCOL FIRST', s: '10 min', note: 'Non-negotiable before any loading. Hip flexors → ankles → squat hold → 10 approach jumps → 5 max verticals. Track your highest reach weekly.' },
-        { n: 'Back Squat', s: '4×8', note: 'Hip crease below knee. Brace hard. 3-sec descent. Explosive up. START AT 255 lb — your legs are ahead of everything else. Hit 8 on all sets → add 10 lb. RPE 8.' },
+        { n: 'Back Squat', s: '4×8', note: 'Hip crease below knee. Brace hard. Controlled down, drive up — NORMAL tempo, no counting seconds while you rebuild the pattern. START AT 225 lb (rebuilding from a layoff — 255 will come back fast). Hit 8 on all sets for 2 sessions → add 10 lb. RPE 8.' },
         { n: 'Romanian Deadlift', s: '4×10', note: 'Hip hinge. Soft knee. Bar drags down the leg. Feel the hamstring load at bottom. 3-sec eccentric. RPE 7.' },
         { n: 'Leg Press', s: '3×12', note: 'High and wide foot placement = glutes and hamstrings. Full range — don\'t short rep this. 90s rest.' },
         { n: 'Nordic Hamstring Curl', s: '3×6', note: 'Lower as slowly as possible. Partner holds feet or feet under pad. Prevents hamstring tears. Builds vertical jump directly.' },
         { n: 'Depth Jump', s: '4×5', note: 'Step off 12in box. Land soft — immediately max jump up. Reactive strength. The most direct dunk training you can do.' },
-        { n: 'Single-Leg Calf Raise', s: '4×20/leg', note: 'Off a step. Pause at top 1 sec. Full range. Ankle strength = 2 free vertical inches.' },
-        ...CORE_LOWER,
-      ]
+        { n: 'Single-Leg Calf Raise', s: '4×20/leg', note: 'Off a step. Pause at top 1 sec. Full range. Ankle strength = 2 free vertical inches.' },]
     },
     {
       id: 'cut-d3', day: 'DAY 3', name: 'UPPER B — BACK + CHEST',
@@ -160,6 +161,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8 on pull-ups and rows. RPE 7 on chest secondary.',
       warmup: 'upper_pull',
       exercises: [
+        ...CORE_PULL,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Weighted Pull-Up', s: '5×6', note: 'You do 15 bodyweight — time to load it. START AT +15 lb (dip belt or DB between feet). Dead hang, chest to bar. Hit 6 on all sets → add 5 lb. This turns 15 reps into a thick wide back. RPE 8.' },
         { n: 'Barbell Row', s: '4×8', note: 'Pull to lower chest. Elbows close to body. 2-sec hold at top. Control the negative. Back thickness is built here. RPE 8.' },
         { n: 'Cable Row (wide grip)', s: '3×10', note: 'Different angle from barbell row. Full stretch — let shoulders protract. Pull to upper chest. Lat width.' },
@@ -167,9 +170,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Incline DB Press', s: '3×10', note: 'Chest second hit. Upper chest priority. Elbows 45°. Full range. Controlled. RPE 7.' },
         { n: 'Cable Fly (high to low)', s: '3×12', note: 'Upper chest sweep. Arms slightly bent. Squeeze at bottom. RPE 7.' },
         { n: 'Face Pull', s: '4×20', note: 'Shoulder health. Every upper session. Never optional.' },
-        { n: 'Barbell Curl superset Hammer Curl', s: '3×12 each', note: 'Full supination on barbell curl. Neutral on hammer. Bicep peak + thickness.' },
-        ...CORE_PULL,
-      ]
+        { n: 'Barbell Curl superset Hammer Curl', s: '3×12 each', note: 'Full supination on barbell curl. Neutral on hammer. Bicep peak + thickness.' },]
     },
     {
       id: 'cut-d4', day: 'DAY 4', name: 'LOWER B — ATHLETIC + COURT',
@@ -178,6 +179,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'Explosive work = max effort. Strength work RPE 7.',
       warmup: 'lower_athletic',
       exercises: [
+        ...CORE_ATHLETIC,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: '⚡ Lateral Bound', s: '4×8/side', note: 'Opens every athletic session. Land soft on single leg. Hold 1 sec. Hip abductor + glute power = defensive first step.' },
         { n: '⚡ Broad Jump', s: '4×6', note: 'Max distance every rep. Full reset between. Horizontal explosive power.' },
         { n: 'Front Squat', s: '4×8', note: 'Upright torso. Elbows high. Quad dominant. Safer on knees than back squat second leg day. RPE 7.' },
@@ -185,9 +188,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Single-Leg RDL', s: '3×10/leg', note: 'Balance + hamstring. Control the wobble — that instability is the point. Landing mechanics.' },
         { n: 'Sprint', s: '8×40m', note: 'Walk back = full rest. Every rep max speed. This is your first step. This is your defence. This is your dunk approach.' },
         { n: 'T-Drill', s: '6 rounds', note: 'Time every round. Write it down. Beat it next week. Agility is trainable.' },
-        { n: '5-10-5 Shuttle', s: '6 rounds', note: 'Change of direction speed. Basketball in a nutshell.' },
-        ...CORE_ATHLETIC,
-      ]
+        { n: '5-10-5 Shuttle', s: '6 rounds', note: 'Change of direction speed. Basketball in a nutshell.' },]
     },
     {
       id: 'cut-d5', day: 'DAY 5', name: 'UPPER C — HYPERTROPHY + DEDICATED ABS',
@@ -196,15 +197,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 7 throughout. Volume day. Feel every rep.',
       warmup: 'upper_hyp',
       exercises: [
+        ...CORE_DEDICATED,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Weighted Chin-Up', s: '4×10', note: 'Supinated grip. Chest to bar. Back 3rd hit this week. Bicep bonus. RPE 7.' },
         { n: 'Incline Barbell Press', s: '4×10', note: 'Chest 3rd hit. Upper chest. Full range. 3-sec descent. RPE 7.' },
         { n: 'DB Row (single arm)', s: '4×12/side', note: 'Heavy. Brace on bench. Pull elbow to hip. Back thickness.' },
         { n: 'Cable Fly (low to high)', s: '4×15', note: 'Chest definition. Full stretch. Squeeze hard. Feel the pec.' },
         { n: 'Lat Pulldown (close grip)', s: '3×15', note: 'Different angle. Full range. Lower back to target lower lats.' },
         { n: 'DB Lateral Raise', s: '4×15', note: 'Shoulder caps. Same as Day 1. Accumulate the volume.' },
-        { n: 'Rear Delt Fly', s: '4×15', note: 'Bent over. Light weight. Full range. Rear delt development = 3D shoulder look.' },
-        ...CORE_DEDICATED,
-      ]
+        { n: 'Rear Delt Fly', s: '4×15', note: 'Bent over. Light weight. Full range. Rear delt development = 3D shoulder look.' },]
     },
   ],
 
@@ -222,6 +223,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8–9. You are in surplus. Push harder than you ever have.',
       warmup: 'upper_push',
       exercises: [
+        ...CORE_PUSH,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Barbell Bench Press', s: '5×6', note: 'Heavier than cut phase. Strength + size. 3-sec descent. Pause at chest. Explosive up. Target: 205–225 lb by end of bulk. RPE 9.' },
         { n: 'Incline DB Press', s: '4×10', note: 'Upper chest mass. Heavier DBs than cut. Full range. RPE 8.' },
         { n: 'Weighted Dip', s: '4×10', note: 'Add weight every week. Lean forward. Chest emphasis. RPE 8.' },
@@ -229,9 +232,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Overhead Press', s: '5×6', note: 'Shoulder strength. Heavier than cut. 3-sec descent. No leg drive. RPE 9.' },
         { n: 'DB Lateral Raise', s: '5×15', note: 'One extra set. More volume in bulk. Shoulder caps. Slow and controlled. RPE 7.' },
         { n: 'Face Pull', s: '4×20', note: 'Shoulder health. Non-negotiable every upper session.' },
-        { n: 'Tricep Rope Pushdown superset Overhead Extension', s: '4×12 each', note: 'More sets than cut. Arms grow in bulk. Use it.' },
-        ...CORE_PUSH,
-      ]
+        { n: 'Tricep Rope Pushdown superset Overhead Extension', s: '4×12 each', note: 'More sets than cut. Arms grow in bulk. Use it.' },]
     },
     {
       id: 'bulk-d2', day: 'DAY 2', name: 'LOWER A — POWER + VERTICAL',
@@ -240,15 +241,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8–9. This is where the strength that builds the dunk comes from.',
       warmup: 'lower_power',
       exercises: [
+        ...CORE_LOWER,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: '⚡ JUMP PROTOCOL FIRST', s: '10 min', note: 'Even in bulk. Maintain athleticism. Hip flexors → ankles → approach jumps → max verticals. Track weekly.' },
         { n: 'Back Squat', s: '5×5', note: 'The bulk exercise. Add 5 lb every week you hit all reps. Target 275–315 lb by March. RPE 9.' },
         { n: 'Conventional Deadlift', s: '4×5', note: 'Explosive off floor. 3 min rest. The most total muscle mass builder in existence. RPE 9.' },
         { n: 'Leg Press', s: '4×12', note: 'Volume after heavy work. High foot placement. 90s rest.' },
         { n: 'Nordic Hamstring Curl', s: '3×8', note: 'Getting stronger here directly increases your vertical. Never skip.' },
         { n: 'Depth Jump', s: '4×6', note: '18in box now. Higher box = more reactive demand.' },
-        { n: 'Calf Raises', s: '5×15', note: 'Heavy. Pause at top. Ankle strength for jumping.' },
-        ...CORE_LOWER,
-      ]
+        { n: 'Calf Raises', s: '5×15', note: 'Heavy. Pause at top. Ankle strength for jumping.' },]
     },
     {
       id: 'bulk-d3', day: 'DAY 3', name: 'UPPER B — BACK + CHEST',
@@ -257,6 +258,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 9 on pull-ups and rows. This is the hardest upper session.',
       warmup: 'upper_pull',
       exercises: [
+        ...CORE_PULL,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Weighted Pull-Up', s: '5×6', note: 'Add weight every week. This is the signature Creed exercise. Dead hang. Chest to bar. RPE 9.' },
         { n: 'Barbell Row', s: '5×6', note: 'Heavier than cut. Pull to lower chest. Hold 1 sec at top. RPE 9.' },
         { n: 'Cable Row (wide grip)', s: '4×10', note: 'Full stretch. Pull to upper chest. Lat width.' },
@@ -264,9 +267,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Barbell Bench Press', s: '4×8', note: 'Chest second hit. Still heavy. 3-sec descent. RPE 8.' },
         { n: 'Incline DB Press', s: '3×10', note: 'Upper chest volume. RPE 7.' },
         { n: 'Face Pull', s: '4×20', note: 'Shoulder health. Always.' },
-        { n: 'Barbell Curl superset Hammer Curl', s: '4×10 each', note: 'More volume in bulk. Arms grow here.' },
-        ...CORE_PULL,
-      ]
+        { n: 'Barbell Curl superset Hammer Curl', s: '4×10 each', note: 'More volume in bulk. Arms grow here.' },]
     },
     {
       id: 'bulk-d4', day: 'DAY 4', name: 'LOWER B — ATHLETIC + COURT',
@@ -276,15 +277,15 @@ export const FULL_GYM_WORKOUTS = {
       warmup: 'lower_athletic',
       note: '🏀 BASKETBALL SEASON ADJUSTMENT: On game days replace this entire session with: Jump Protocol + 3×8 Front Squat + 3×8 Single-Leg RDL + Sprint 4×40m. Save energy for the court.',
       exercises: [
+        ...CORE_ATHLETIC,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: '⚡ Lateral Bound', s: '4×8/side', note: 'You are faster now. Land and hold. Hip power.' },
         { n: '⚡ Depth Jump to Broad Jump', s: '4×5', note: 'Step off box, land, immediately broad jump max distance. Complex training = maximum power output.' },
         { n: 'Front Squat', s: '4×8', note: 'Heavier than cut. Upright torso. Quad development. RPE 8.' },
         { n: 'Bulgarian Split Squat', s: '4×10/leg', note: 'Heavier DBs. Single leg strength. Basketball cuts. RPE 8.' },
         { n: 'Sled Push', s: '4×20m', note: 'Heavy load. Drive through the floor. 2 min rest. Pure power.' },
         { n: 'Sprint', s: '8×40m', note: 'Walk back = rest. You are the fastest person on that court.' },
-        { n: 'T-Drill + 5-10-5', s: '6 rounds each', note: 'Time every run. PRs only.' },
-        ...CORE_ATHLETIC,
-      ]
+        { n: 'T-Drill + 5-10-5', s: '6 rounds each', note: 'Time every run. PRs only.' },]
     },
     {
       id: 'bulk-d5', day: 'DAY 5', name: 'UPPER C — HYPERTROPHY + DEDICATED ABS',
@@ -293,15 +294,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 7–8. Pump and feel. Volume accumulation.',
       warmup: 'upper_hyp',
       exercises: [
+        ...CORE_DEDICATED,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Weighted Chin-Up', s: '5×10', note: 'More volume than cut. Back 3× this week. Bicep thickness in bulk.' },
         { n: 'Incline Barbell Press', s: '5×8', note: 'Chest 3× this week. Heavier than cut. Upper chest mass.' },
         { n: 'DB Row (single arm)', s: '4×12/side', note: 'Heavy. Back thickness.' },
         { n: 'Cable Fly', s: '4×15', note: 'Chest definition and pump.' },
         { n: 'Lat Pulldown (close grip)', s: '4×15', note: 'Lower lat sweep. Different angle.' },
         { n: 'DB Lateral Raise', s: '4×15', note: 'Shoulder caps. Volume accumulation.' },
-        { n: 'Rear Delt Fly', s: '4×15', note: '3D shoulder look. Don\'t skip this.' },
-        ...CORE_DEDICATED,
-      ]
+        { n: 'Rear Delt Fly', s: '4×15', note: '3D shoulder look. Don\'t skip this.' },]
     },
   ],
 
@@ -318,6 +319,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8. Same weight as bulk — protect what you built.',
       warmup: 'upper_push',
       exercises: [
+        ...CORE_PUSH,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Barbell Bench Press', s: '4×6', note: 'SAME WEIGHT AS BULK. On a cut your job is to keep the weight on the bar. This protects the muscle. RPE 8.' },
         { n: 'Incline DB Press', s: '3×10', note: 'Upper chest. Controlled. The cut is revealing what you built.' },
         { n: 'Weighted Dip', s: '3×8', note: 'Maintain strength. Add weight only if it feels light.' },
@@ -325,9 +328,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Overhead Press', s: '4×6', note: 'Strength. Same weight as bulk end. Protect the shoulder gains.' },
         { n: 'DB Lateral Raise', s: '4×15', note: 'Shoulder caps stay. These maintain on cut.' },
         { n: 'Face Pull', s: '3×20', note: 'Shoulder health. Always.' },
-        { n: 'Tricep Superset', s: '3×12 each', note: 'Maintain arm detail.' },
-        ...CORE_PUSH,
-      ]
+        { n: 'Tricep Superset', s: '3×12 each', note: 'Maintain arm detail.' },]
     },
     {
       id: 'fc-d2', day: 'DAY 2', name: 'LOWER A — POWER + VERTICAL',
@@ -336,15 +337,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8. Protect the squat strength.',
       warmup: 'lower_power',
       exercises: [
+        ...CORE_LOWER,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: '⚡ JUMP PROTOCOL FIRST', s: '10 min', note: 'You are lighter now. This translates directly to more vertical. Track it. You should be touching rim consistently.' },
         { n: 'Back Squat', s: '4×5', note: 'SAME WEIGHT AS BULK. Strength maintenance on cut. Non-negotiable. RPE 8.' },
         { n: 'Romanian DL', s: '4×8', note: 'Hamstring maintenance. 3-sec eccentric.' },
         { n: 'Bulgarian Split Squat', s: '3×10/leg', note: 'Single leg strength for basketball.' },
         { n: 'Nordic Hamstring Curl', s: '3×8', note: 'Vertical jump maintenance.' },
         { n: 'Depth Jump', s: '4×6', note: 'You are lighter. Same box. More height. Track your max reach.' },
-        { n: 'Single-Leg Calf Raise', s: '4×20/leg', note: 'Ankle strength. Always.' },
-        ...CORE_LOWER,
-      ]
+        { n: 'Single-Leg Calf Raise', s: '4×20/leg', note: 'Ankle strength. Always.' },]
     },
     {
       id: 'fc-d3', day: 'DAY 3', name: 'UPPER B — BACK + CHEST',
@@ -353,6 +354,8 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 8. Keep the weight. Drop volume before intensity.',
       warmup: 'upper_pull',
       exercises: [
+        ...CORE_PULL,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Weighted Pull-Up', s: '4×6', note: 'Same weight as bulk. Protect the back gains. The V-taper is being revealed right now as fat drops. RPE 8.' },
         { n: 'Barbell Row', s: '4×8', note: 'Strength maintenance. Same weight. Pull to lower chest.' },
         { n: 'Cable Row', s: '3×10', note: 'Volume drops slightly vs bulk. Quality over quantity.' },
@@ -360,9 +363,7 @@ export const FULL_GYM_WORKOUTS = {
         { n: 'Barbell Bench Press', s: '3×8', note: 'Chest second hit. Strength focus. RPE 8.' },
         { n: 'Incline DB Press', s: '3×10', note: 'Upper chest. Definition emerging.' },
         { n: 'Face Pull', s: '3×20', note: 'Always.' },
-        { n: 'Barbell Curl superset Hammer Curl', s: '3×12 each', note: 'Maintain arm size on cut.' },
-        ...CORE_PULL,
-      ]
+        { n: 'Barbell Curl superset Hammer Curl', s: '3×12 each', note: 'Maintain arm size on cut.' },]
     },
     {
       id: 'fc-d4', day: 'DAY 4', name: 'LOWER B — ATHLETIC + 10K',
@@ -371,15 +372,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'Explosive = max effort. Runs at comfortable hard pace.',
       warmup: 'lower_athletic',
       exercises: [
+        ...CORE_ATHLETIC,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: '⚡ Approach Jump Attempts', s: '10 reps', note: 'Go for the dunk. You have lost 15+ lb. The vertical is there. Attempt it every session.' },
         { n: '⚡ Lateral Bound', s: '5×8/side', note: 'More volume. You are lighter. Use it.' },
         { n: 'Jump Squat', s: '4×8 @30%BW', note: 'Speed-strength. Light and fast. Dunk training.' },
         { n: 'Front Squat', s: '3×8', note: 'Maintain leg strength on cut.' },
         { n: 'Single-Leg RDL', s: '3×10/leg', note: 'Balance. Hamstring.' },
         { n: 'Sprint', s: '8×40m', note: 'Fastest you have ever been. Walk back = rest.' },
-        { n: '10K Run', s: '30–45 min', note: 'WED/SAT/SUN: Tempo runs + long run + easy recovery. Build to race-ready by June.' },
-        ...CORE_ATHLETIC,
-      ]
+        { n: '10K Run', s: '30–45 min', note: 'WED/SAT/SUN: Tempo runs + long run + easy recovery. Build to race-ready by June.' },]
     },
     {
       id: 'fc-d5', day: 'DAY 5', name: 'UPPER C — HYPERTROPHY + DEDICATED ABS',
@@ -388,15 +389,15 @@ export const FULL_GYM_WORKOUTS = {
       rpe: 'RPE 7. Feel every rep. Definition day.',
       warmup: 'upper_hyp',
       exercises: [
+        ...CORE_DEDICATED,
+        { n: '— REST 2 MIN, THEN TRAIN —', s: '', note: 'Core done. You earned the session. Now the main work.' },
         { n: 'Weighted Chin-Up', s: '4×10', note: 'Back third hit. Maintain the width.' },
         { n: 'Incline Barbell Press', s: '4×10', note: 'Chest third hit. Definition emerging.' },
         { n: 'DB Row', s: '3×12/side', note: 'Back thickness.' },
         { n: 'Cable Fly', s: '4×15', note: 'Chest definition. Squeeze and hold.' },
         { n: 'Lat Pulldown', s: '3×12', note: 'Width maintenance.' },
         { n: 'DB Lateral Raise', s: '4×15', note: 'Shoulder caps. These stay full on cut.' },
-        { n: 'Rear Delt Fly', s: '3×15', note: '3D shoulder look.' },
-        ...CORE_DEDICATED,
-      ]
+        { n: 'Rear Delt Fly', s: '3×15', note: '3D shoulder look.' },]
     },
   ],
 }
