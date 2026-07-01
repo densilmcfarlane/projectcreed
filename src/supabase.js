@@ -1,25 +1,21 @@
 import { createClient } from '@supabase/supabase-js'
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://xdoimdmulvfzapkdsebq.supabase.co'
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+// Correct Supabase project (cfaizrsxwrqijhuuvdxe) with the fitness_ tables.
+// URL + anon key are baked in as defaults so the app works with zero config.
+// (The anon key is public-safe by design — Row Level Security protects the data.)
+// Environment variables still override these if ever set.
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://cfaizrsxwrqijhuuvdxe.supabase.co'
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNmYWl6cnN4d3JxaWpodXV2ZHhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3ODMwMjQsImV4cCI6MjA5ODM1OTAyNH0.BKNMFZJNKd37xcjHTBssxKILURzA8DgP7qEw9tJV71c'
 
-// Flag the app can check — true only when a real key is present
 export const supabaseReady = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
 
-// Never let a missing key crash the whole app. If the key is absent,
-// export a safe stub whose calls resolve to empty results instead of throwing.
+// Safety net: if anything is ever missing, the app still loads instead of crashing.
 function makeStub() {
   const result = Promise.resolve({ data: null, error: { message: 'Supabase not configured' } })
   const chain = {
-    select: () => chain,
-    insert: () => result,
-    upsert: () => result,
-    update: () => chain,
-    delete: () => chain,
-    eq: () => chain,
-    order: () => chain,
-    limit: () => result,
-    single: () => result,
+    select: () => chain, insert: () => result, upsert: () => result,
+    update: () => chain, delete: () => chain, eq: () => chain,
+    order: () => chain, limit: () => result, single: () => result,
     then: (resolve) => result.then(resolve),
   }
   return { from: () => chain }
